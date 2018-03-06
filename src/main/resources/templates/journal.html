@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <title>Title</title>
+        <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
+    </head>
+<body>
+<div class="container">
+        <div class="row">
+            <br/>
+            <table class="table">
+                <tr>
+                    <th>Group Shifrovania</th>
+                    <th>Group Teacher</th>
+                    <th>Group Numer</th>
+                </tr>
+                <tr th:each = "journal : ${journal}">
+                    <td th:text = "${journal.group_shif}">test</td>
+                    <td th:text = "${journal.group_teach}">test</td>
+                    <td th:text = "${journal.group_num}">test</td>
+                    <td> <a href = '/journal/add'>Add</a></td>
+                    <td> <a th:href="@{'/journal/editJournal?id='+${journal.group_id}}">Update</a></td>
+                    <td> <a th:href = "@{'/journal/deleteJournal?id='+${journal.group_id}}">Delete</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+<script th:src = "@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+</body>
+</html>

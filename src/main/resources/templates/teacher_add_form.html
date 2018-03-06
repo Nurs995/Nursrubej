@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+        <meta charset="UTF-8" />
+        <title>Add Teacher page</title>
+        <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
+    </head>
+<body>
+
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="form-group">
+                <form action="#" th:action="@{/demo/add}" th:object = "${teacher}" method="POST">
+                    <hidden th:path="id"/>
+                   <label for="Name">Name</label>
+                    <input type="text" id="Name" name="Name" th:field = "*{Name}" class="form-control" placeholder="Есімі" />
+
+                    <label for="Surname">Surname</label>
+                    <input type="text" id="Surname" name="Surname" th:field = "*{Surname}" class="form-control" placeholder="Тегі" />
+
+                   <label for="Email">Email</label>
+                    <input type="Email" id="Email" name="Email" th:field = "*{Email}" class="form-control" placeholder="Email"/>
+
+                    <br/>
+                    <button type="submit" class="btn btn-primary">ОK</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+<script th:src = "@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+</body>
+</html>

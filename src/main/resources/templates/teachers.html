@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Teacher</title>
+    <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+    </tr>
+    <tr th:each = "teacher : ${teachers}">
+        <td th:text = "${teacher.Name}">test</td>
+        <td th:text = "${teacher.Surname}">test</td>
+        <td th:text = "${teacher.Email}">test</td>
+        <td> <a href = '/demo/add'>Add</a></td>
+        <td> <a th:href="@{'/demo/editteacher?id='+${teacher.id}}">Edit</a></td>
+        <td> <a th:href = "@{'/demo/deleteTeacher?id='+${Teacher.id}}">Delete</a></td>
+    </tr>
+</table>
+    </div>
+</div>
+<script th:src = "@{/js/bootstrap.min.js}"></script>
+<script th:src = "@{/js/jquery-3.3.1.min.js}"></script>
+</body>
+</html>
